@@ -1,0 +1,34 @@
+{
+  "name": "kp",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "element-ui": "^2.15.6",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-i18n": "^8.26.7",
+    "vue-i18n-bridge": "^9.2.0-beta.10",
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^3.2.0"
+  },
+  "devDependencies": {
+    "@intlify/vue-i18n-loader": "^3.2.0",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-plugin-component": "^1.1.1",
+    "less": "^3.0.4",
+    "less-loader": "^5.0.0",
+    "typescript": "~4.1.5",
+    "vue-cli-plugin-i18n": "~2.3.1",
+    "vue-template-compiler": "^2.6.11"
+  }
+}
