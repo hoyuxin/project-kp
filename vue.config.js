@@ -6,7 +6,7 @@ module.exports = {
       localeDir: 'locales',
       enableInSFC: true,
       includeLocales: false,
-      enableBridge: true
-    }
-  }
-}
+      enableBridge: true,
+    },
+  },
+};

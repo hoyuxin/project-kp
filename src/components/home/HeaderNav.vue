@@ -2,7 +2,7 @@
   <div class="nav-block">
     <div class="nav-left">
       <img alt="logo"
-           src="./../assets/logo.png">
+           :src="logo" />
       <nav>
         <ul class="nav-menu">
           <li class="nav-menu__item">{{$t('home.product')}}</li>
@@ -13,17 +13,20 @@
       </nav>
     </div>
     <div class="nav-right">
-      <el-button>{{$t('home.login')}}</el-button>
       <p class="language"
          @click="toggleLan($i18n.locale)">{{langText}}</p>
+      <el-button>{{$t('home.login')}}</el-button>
+
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import logo from '@/assets/logo.png';
 @Component
 export default class HeaderNav extends Vue {
+  public logo: string = logo;
   public switchLang(newLang: string) {
     this.$i18n.locale = newLang;
     localStorage.setItem('locale', newLang);
@@ -51,6 +54,8 @@ export default class HeaderNav extends Vue {
   }
   &-right {
     display: flex;
+    align-items: center;
+    padding: 0 20px 0 0;
   }
   &-menu {
     display: flex;
@@ -65,9 +70,11 @@ export default class HeaderNav extends Vue {
   }
 }
 .language {
-  margin-left: 10px;
+  margin-right: 15px;
   min-width: 65px;
   text-align: center;
   cursor: pointer;
+}
+@media (min-width: 768px) {
 }
 </style>
