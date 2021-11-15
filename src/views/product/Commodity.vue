@@ -139,6 +139,7 @@ export default class Commodity extends Vue {
   &-table {
     padding: 40px 0;
     margin: auto;
+    min-height: 100%;
   }
   &-warn {
     &-block {

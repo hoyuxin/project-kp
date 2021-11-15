@@ -169,6 +169,9 @@ export default class Currency extends Vue {
     max-width: 1200px;
     margin: auto;
   }
+  &-table {
+    min-height: 100%;
+  }
   &-warn {
     &-block {
       padding-top: 40px;

@@ -151,6 +151,7 @@ export default class Indices extends Vue {
   &-table {
     max-width: 1000px;
     padding: 40px 0;
+    min-height: 100%;
   }
   &-list {
     list-style: none;
