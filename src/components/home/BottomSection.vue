@@ -55,8 +55,8 @@ export default class BottomSection extends Vue {
       {
         label: 'home.about',
         subMenu: [
-          { label: 'home.company', name: 'company' },
-          { label: 'home.new', name: '' },
+          { label: 'home.company', name: 'Company' },
+          { label: 'home.new', name: 'News' },
         ],
       },
       {
