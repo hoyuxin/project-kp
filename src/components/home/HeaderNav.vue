@@ -39,6 +39,9 @@ export default class HeaderNav extends Vue {
   public goHome() {
     this.$router.push({ name: 'Home' });
   }
+  public goPage(nameRouter: string) {
+    this.$router.push({ name: nameRouter });
+  }
   public get langText() {
     return this.$i18n.locale === 'zh-tw' ? 'English' : '繁體中文';
   }
