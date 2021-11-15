@@ -1,25 +1,22 @@
 import Vue from 'vue';
-import VueRouter, { RouteConfig } from 'vue-router';
-import Home from '../views/Home.vue';
+import Router, { RouteConfig } from 'vue-router';
 
-Vue.use(VueRouter);
+const originalPush: any = Router.prototype.push;
 
-const routes: RouteConfig[] = [
-  {
-    path: '/',
-    name: '',
-    component: Home,
-    // component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    component: Home,
-    // component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
-  },
-];
+Router.prototype.push = function push(location: any) {
+  return originalPush.call(this, location).catch((error: any) => error);
+};
+Vue.use(Router);
+const context = (require as any).context('./', false, /\.ts$/);
+let routes: any[] = [];
+context
+  .keys()
+  .filter((item: string) => item !== './index.ts')
+  .map((path: string) => {
+    routes = [...routes, ...context(path).default];
+  });
 
-const router = new VueRouter({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes,

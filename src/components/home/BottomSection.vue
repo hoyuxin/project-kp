@@ -17,7 +17,8 @@
             <ul class="bottom-menu__sub clear-default"
                 v-for="sub in item.subMenu"
                 :key="sub.label">
-              <li class="bottom-submenu">{{$t(sub.label)}}</li>
+              <li class="bottom-submenu"
+                  @click="goPage(sub.name)">{{$t(sub.label)}}</li>
             </ul>
           </li>
         </ul>
@@ -42,36 +43,39 @@ export default class BottomSection extends Vue {
       {
         label: 'home.product',
         subMenu: [
-          { label: 'home.forex', link: '' },
-          { label: 'home.oil', link: '' },
-          { label: 'home.currency', link: '' },
+          { label: 'home.indices', name: 'Indices' },
+          { label: 'home.currency', name: 'Currency' },
+          { label: 'home.commodity', name: 'Commodity' },
         ],
       },
       {
         label: 'home.trade',
-        subMenu: [{ label: 'Meta 4', link: '' }],
+        subMenu: [{ label: 'Meta Trade4', name: 'MetaTrade4' }],
       },
       {
         label: 'home.about',
         subMenu: [
-          { label: 'home.company', link: '' },
-          { label: 'home.new', link: '' },
+          { label: 'home.company', name: 'company' },
+          { label: 'home.new', name: '' },
         ],
       },
       {
         label: 'home.question',
         subMenu: [
-          { label: 'home.contact', link: '' },
-          { label: 'home.qa', link: '' },
+          { label: 'home.contact', name: '' },
+          { label: 'home.qa', name: '' },
         ],
       },
     ];
+  }
+  public goPage(router: string) {
+    this.$router.push({ name: router });
   }
 }
 </script>
 <style lang="less" scoped>
 .trade-intro {
-  background-color: #eee;
+  background-color: #dfdfdf;
   color: #878787;
   &__content {
     margin: auto;
@@ -117,7 +121,7 @@ export default class BottomSection extends Vue {
 @media (min-width: 1200px) {
   .trade-intro {
     &__content {
-      width: 1000px;
+      max-width: 1200px;
     }
   }
 }

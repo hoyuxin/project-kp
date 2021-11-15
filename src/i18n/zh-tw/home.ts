@@ -1,8 +1,9 @@
 export default {
   product: '產品介紹',
-  forex: '外匯',
-  oil: '原油',
+  stock: '股票',
+  commodity: '大宗商品',
   currency: '虛擬貨幣',
+  indices: '指數',
   trade: '交易服務',
   about: '關於我們',
   company: '公司簡介',
@@ -12,7 +13,6 @@ export default {
   qa: 'Q&A',
   login: '登入',
   download: '下载',
-
   intro: {
     item1: { title: '真實帳戶', label: '全球產品交易' },
     item2: { title: '專人客服', label: '24H即時回覆' },

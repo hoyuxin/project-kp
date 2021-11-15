@@ -20,9 +20,9 @@
       </div>
       <div class="brand-content">
         <div class="brand-content-container">
-          <p class="brand-sub-title">原油、股票、虛擬貨幣</p>
+          <p class="brand-sub-title">指數、大宗商品、虛擬貨幣</p>
           <p>槓桿最高1:200</p>
-          <p>我們不斷開發新產品來滿足交易者需求，新增美國熱門股票CFDs差價合約產品。</p>
+          <p>我們不斷開發新產品來滿足交易者需求</p>
         </div>
       </div>
     </div>
@@ -55,9 +55,13 @@ export default class Brand extends Vue {
   &-order {
     background-color: #232;
   }
-  &-content-container {
-    padding: 40px 20px;
-    line-height: 2;
+  &-content {
+    box-sizing: border-box;
+    padding: 0 20px;
+    &-container {
+      padding: 40px 20px;
+      line-height: 2;
+    }
   }
 
   &-sub-title {
@@ -69,7 +73,6 @@ export default class Brand extends Vue {
   .brand {
     &-item {
       display: flex;
-      align-items: center;
     }
     &-image,
     &-content {
@@ -88,6 +91,13 @@ export default class Brand extends Vue {
     }
     &-sub-title {
       font-size: 40px;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .brand {
+    &-item {
+      align-items: center;
     }
   }
 }

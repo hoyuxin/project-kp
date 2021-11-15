@@ -1,7 +1,8 @@
 export default {
   product: 'Product',
-  forex: 'Forex',
-  oil: 'Oil',
+  stock: 'Stock',
+  commodity: 'Commodity',
+  indices: 'Indices',
   currency: 'Cryptocurrency',
   trade: 'Trade',
   about: 'About',
