@@ -9,7 +9,8 @@
         <ul class="nav-menu">
           <li class="nav-menu__item"
               v-for="item in navList"
-              :key="item.index">{{$t(item.label)}}</li>
+              :key="item.index"
+              @click="goPage(item.name)">{{$t(item.label)}}</li>
         </ul>
       </nav>
     </div>
@@ -43,9 +44,9 @@ export default class HeaderNav extends Vue {
   }
   public get navList() {
     return [
-      { label: 'home.product', index: 1, name: '' },
-      { label: 'home.trade', index: 2, name: '' },
-      { label: 'home.about', index: 3, name: '' },
+      { label: 'home.product', index: 1, name: 'Indices' },
+      { label: 'home.trade', index: 2, name: 'MetaTrade4' },
+      { label: 'home.about', index: 3, name: 'Company' },
       { label: 'home.question', index: 4, name: '' },
     ];
   }
