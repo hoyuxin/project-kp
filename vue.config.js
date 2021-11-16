@@ -1,6 +1,6 @@
 module.exports = {
   outputDir: 'public',
-  publicPath: '/project-kp/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/project-kp/' : '/',
   pluginOptions: {
     i18n: {
       locale: 'zh-tw',

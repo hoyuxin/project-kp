@@ -12,6 +12,7 @@ Vue.use(Icon);
 Vue.use(Carousel);
 Vue.use(CarouselItem);
 Vue.use(Table);
+Vue.use(TableColumn);
 Vue.use(Row);
 Vue.use(Col);
 let lang: any = 'zh-tw';

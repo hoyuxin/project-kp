@@ -77,6 +77,22 @@
           </div>
         </div>
       </div>
+
+    </div>
+    <div class="platform-icon-block">
+      <div class="platform-icon-item"
+           v-for="item in list"
+           :key="item.icon">
+        <div class="platform-icon-image-block">
+          <img :src="item.icon"
+               alt="platform-icon"
+               class="platform-icon-image">
+        </div>
+        <div>
+          <p class="platform-icon-title">{{item.title}}</p>
+          <p>{{item.content}}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -84,11 +100,14 @@
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator';
 import bannerImg from '@/assets/platform/mt4.png';
-
+import icon1 from '@/assets/platform/icon-1.svg';
+import icon2 from '@/assets/platform/icon-2.svg';
+import icon3 from '@/assets/platform/icon-3.svg';
+import icon4 from '@/assets/platform/icon-4.svg';
 @Component
 export default class MetaTrade extends Vue {
   public isHoverItem: boolean = true;
-
+  public images = { icon1, icon2, icon3, icon4 };
   public linkList: any = {
     pc: '',
     ios: '',
@@ -117,6 +136,19 @@ export default class MetaTrade extends Vue {
       { radioText: this.$t('platform.MT4.Feature.Item4') },
       { radioText: this.$t('platform.MT4.Feature.Item5') },
       { radioText: this.$t('platform.MT4.Feature.Item6') },
+    ];
+  }
+  public get list() {
+    const { icon1, icon2, icon3, icon4 } = this.images;
+    return [
+      { icon: icon1, title: '一鍵交易', content: '一鍵即進入市場並平倉。' },
+      {
+        icon: icon2,
+        title: '演算法交易',
+        content: '使用 MQL4 編程語言建立您的交易機器人，並在終端中執行它們。',
+      },
+      { icon: icon3, title: 'MetaTrader Market', content: '直接在平台上購買專家顧問和指標。' },
+      { icon: icon4, title: '基本分析', content: '終端中的新聞和訊號用於追蹤所有金融市場事件。' },
     ];
   }
 }
@@ -149,18 +181,39 @@ export default class MetaTrade extends Vue {
       padding: 40px 0;
     }
   }
+  &-icon {
+    &-block {
+      padding: 30px 20px;
+      text-align: center;
+    }
+    &-image {
+      width: 100%;
+      vertical-align: middle;
+      &-block {
+        width: 76px;
+        height: 76px;
+        margin: auto;
+        padding: 50px 0 0;
+      }
+    }
+    &-title {
+      color: #0c1f3d;
+      font-weight: bold;
+      padding: 10px 0;
+    }
+  }
 }
 .banner {
-  &-title-block {
-    color: #fff;
-    text-align: center;
-    padding-top: 30px;
+  &-title {
+    font-size: 26px;
+    &-block {
+      color: #fff;
+      text-align: center;
+      padding-top: 30px;
+    }
   }
   &-button-block {
     text-align: center;
-  }
-  &-title {
-    font-size: 26px;
   }
   &-sub-title {
     padding: 20px 0 40px;
@@ -168,6 +221,9 @@ export default class MetaTrade extends Vue {
   }
   &-link {
     text-decoration: none;
+  }
+  &-img-block {
+    text-align: right;
   }
 }
 .mt4-button {
@@ -259,7 +315,19 @@ export default class MetaTrade extends Vue {
 .radio-text {
   padding: 0 20px;
 }
-
+@media (min-width: 768px) {
+  .platform {
+    &-icon {
+      &-item {
+        width: 50%;
+      }
+      &-block {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
 @media (min-width: 1200px) {
   .platform {
     &-mt4 {
@@ -285,6 +353,17 @@ export default class MetaTrade extends Vue {
         display: flex;
         justify-content: space-around;
         padding: 40px 0;
+      }
+    }
+    &-icon {
+      &-block {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        padding: 40px 0px;
+      }
+      &-item {
+        flex-basis: 25%;
       }
     }
   }

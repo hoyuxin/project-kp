@@ -6,6 +6,7 @@
       <div class="currency-table">
         <el-table :data="tableData"
                   stripe
+                  height="600px"
                   style="width: 100%">
           <el-table-column prop="No"
                            label="序號"

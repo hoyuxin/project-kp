@@ -172,8 +172,6 @@ export default class Company extends Vue {
 </script>
 <style lang="less" scoped>
 .company {
-  &-wrap {
-  }
   &-block {
     max-width: 1200px;
     margin: auto;
