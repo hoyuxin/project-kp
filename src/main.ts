@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
-import { Button, Carousel, CarouselItem, Icon, Table, TableColumn, Row, Col } from 'element-ui';
+import { Button, Carousel, CarouselItem, Icon, Table, TableColumn, Row, Col, Collapse, CollapseItem } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import VueI18n from 'vue-i18n';
 import messages from '@/i18n';
@@ -15,6 +15,8 @@ Vue.use(Table);
 Vue.use(TableColumn);
 Vue.use(Row);
 Vue.use(Col);
+Vue.use(Collapse);
+Vue.use(CollapseItem);
 let lang: any = 'zh-tw';
 if (localStorage.getItem('locale')) {
   lang = localStorage.getItem('locale');

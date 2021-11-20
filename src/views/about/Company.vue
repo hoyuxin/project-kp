@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div class="company-banner-block"
+         :style="'background-image: url(' + bannerImg + ');'">
+      <p>關於我們</p>
+    </div>
     <div class="company-block">
       <div class="company-content">
         <h3 class="company-title">通往全球交易市場</h3>
@@ -102,10 +106,12 @@ import icon3 from '@/assets/about/icon-3.svg';
 import icon4 from '@/assets/about/icon-4.svg';
 import icon5 from '@/assets/about/icon-5.svg';
 import icon6 from '@/assets/about/icon-6.svg';
+import bannerImg from '@/assets/about/img-banner.jpg';
 
 @Component
 export default class Company extends Vue {
   public aniBackground: any = null;
+  public bannerImg = bannerImg;
   public images = { icon1, icon2, icon3, icon4, icon5, icon6 };
   public get list() {
     return [
@@ -172,6 +178,20 @@ export default class Company extends Vue {
 </script>
 <style lang="less" scoped>
 .company {
+  &-banner-block {
+    min-height: 300px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 60% top;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 1.6px;
+  }
   &-block {
     max-width: 1200px;
     margin: auto;
@@ -304,6 +324,10 @@ export default class Company extends Vue {
 }
 @media (min-width: 1200px) {
   .company {
+    &-banner-block {
+      min-height: 600px;
+      font-size: 36px;
+    }
     &-list {
       display: flex;
       flex-wrap: wrap;

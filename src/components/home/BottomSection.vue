@@ -12,8 +12,8 @@
             v-for="item in menuList"
             :key="item.label">
           <li class="bottom-menu__item">
-            <a href=""
-               class="bottom-menu__label">{{$t(item.label)}}</a>
+            <p @click="goPage(item.name)"
+               class="bottom-menu__label">{{$t(item.label)}}</p>
             <ul class="bottom-menu__sub clear-default"
                 v-for="sub in item.subMenu"
                 :key="sub.label">
@@ -42,18 +42,24 @@ export default class BottomSection extends Vue {
     return [
       {
         label: 'home.product',
+        name: 'Indices',
         subMenu: [
           { label: 'home.indices', name: 'Indices' },
-          { label: 'home.currency', name: 'Currency' },
           { label: 'home.commodity', name: 'Commodity' },
+          { label: 'home.currency', name: 'Currency' },
         ],
       },
       {
         label: 'home.trade',
-        subMenu: [{ label: 'Meta Trade4', name: 'MetaTrade4' }],
+        name: 'MetaTrade4',
+        subMenu: [
+          { label: 'Meta Trade4', name: 'MetaTrade4' },
+          { label: 'App', name: 'App' },
+        ],
       },
       {
         label: 'home.about',
+        name: 'Company',
         subMenu: [
           { label: 'home.company', name: 'Company' },
           { label: 'home.new', name: 'News' },
@@ -61,9 +67,11 @@ export default class BottomSection extends Vue {
       },
       {
         label: 'home.question',
+        name: 'Contact',
+
         subMenu: [
-          { label: 'home.contact', name: '' },
-          { label: 'home.qa', name: '' },
+          { label: 'home.contact', name: 'Contact' },
+          { label: 'home.qa', name: 'Faq' },
         ],
       },
     ];
@@ -98,6 +106,7 @@ export default class BottomSection extends Vue {
   &__label {
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
   }
 }
 .bottom-submenu {
