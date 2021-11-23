@@ -21,8 +21,8 @@
       </div>
     </div>
     <div class="company-intro block-border">
-      <div>
-        <img src="https://picsum.photos/seed/picsum/180/220"
+      <div class="company-img-block">
+        <img src="https://picsum.photos/seed/picsum/360/440"
              alt="company-img"
              class="company-img">
       </div>
@@ -79,15 +79,18 @@ export default class Platform extends Vue {}
 }
 .company {
   &-intro {
-    display: flex;
-    align-items: flex-start;
+    // display: flex;
+    // align-items: flex-start;
     &__content {
       padding: 20px;
       margin: 0;
     }
   }
   &-img {
-    border-radius: 10px;
+    &-block {
+      width: 100%;
+    }
+    width: 100%;
     vertical-align: middle;
   }
   &-brand {
@@ -129,12 +132,19 @@ export default class Platform extends Vue {}
     &-intro {
       width: 500px;
       margin: 0 20px;
+      display: flex;
+      align-items: flex-start;
     }
     &-brand {
       width: 300px;
       text-align: left;
     }
+    &-img {
+      border-bottom-left-radius: 10px;
+      border-top-left-radius: 10px;
+    }
   }
+
   .block {
     &-border {
       border-radius: 10px;

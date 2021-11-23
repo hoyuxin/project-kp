@@ -1,10 +1,11 @@
 export default {
   product: 'Product',
-  stock: 'Stock',
   commodity: 'Commodity',
   indices: 'Indices',
   currency: 'Cryptocurrency',
   trade: 'Trade',
+  mt4: 'Meta Trade4',
+  app: 'APP',
   about: 'About',
   company: 'Company',
   new: 'Latest News',

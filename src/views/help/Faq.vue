@@ -92,6 +92,12 @@ export default class Faq extends Vue {
 .icon-arrow {
   opacity: 0;
 }
+/deep/ .el-collapse-item {
+  &__header,
+  &__wrap {
+    background-color: transparent;
+  }
+}
 @media (min-width: 1440px) {
   .faq {
     &-block {
@@ -119,10 +125,6 @@ export default class Faq extends Vue {
     }
   }
   /deep/ .el-collapse-item {
-    &__header,
-    &__wrap {
-      background-color: transparent;
-    }
     &__header {
       font-size: 16px;
       font-weight: bold;

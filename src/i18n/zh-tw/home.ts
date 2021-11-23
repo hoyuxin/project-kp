@@ -1,10 +1,11 @@
 export default {
   product: '產品介紹',
-  stock: '股票',
   commodity: '大宗商品',
   currency: '虛擬貨幣',
   indices: '指數',
   trade: '交易服務',
+  mt4: 'MT4',
+  app: 'APP',
   about: '關於我們',
   company: '公司簡介',
   new: '最新消息',
