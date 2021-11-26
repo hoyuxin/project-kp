@@ -1,6 +1,6 @@
 module.exports = {
   devServer: {
-    proxy: 'https://ptx.transportdata.tw',
+    proxy: process.env.VUE_APP_API,
     // '/api': {
     //   target: 'https://data.gov.tw/api/front/news/export',
     //   changeOrigin: true,
