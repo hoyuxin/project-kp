@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <header-nav />
-    <router-view />
-    <bottom-section />
+    <div class="app-view">
+      <div class="app-content">
+        <header-nav />
+        <router-view />
+      </div>
+      <bottom-section />
+    </div>
   </div>
 </template>
 
@@ -25,5 +29,15 @@ export default class App extends Vue {}
   margin: 0;
   font-family: 'Microsoft YaHei', 'Open Sans', Arial, 'sans-serif', 'SourceSansPro-Semibold', 'Helvetica Neue',
     'PingFang SC', 'Microsoft YaHei', 'Tahoma', 'Helvetica', 'Arial', '\\5b8b\4F53', 'sans-serif';
+}
+.app {
+  &-view {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  &-content {
+    flex: 1;
+  }
 }
 </style>

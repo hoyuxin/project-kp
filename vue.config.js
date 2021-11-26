@@ -1,4 +1,11 @@
 module.exports = {
+  devServer: {
+    proxy: 'https://ptx.transportdata.tw',
+    // '/api': {
+    //   target: 'https://data.gov.tw/api/front/news/export',
+    //   changeOrigin: true,
+    // },
+  },
   outputDir: 'public',
   publicPath: process.env.NODE_ENV === 'production' ? '/project-kp/' : '/',
   pluginOptions: {

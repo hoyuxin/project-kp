@@ -59,7 +59,7 @@ export default class Intro extends Vue {
     width: 50%;
   }
   &-item {
-    padding: 20px;
+    padding: 20px 10px;
     margin: 5px;
     display: flex;
     justify-content: center;

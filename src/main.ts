@@ -1,12 +1,30 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
-import { Button, Carousel, CarouselItem, Icon, Table, TableColumn, Row, Col, Collapse, CollapseItem } from 'element-ui';
+import {
+  Select,
+  Option,
+  Button,
+  Carousel,
+  CarouselItem,
+  Icon,
+  Table,
+  TableColumn,
+  Row,
+  Col,
+  Collapse,
+  CollapseItem,
+} from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import VueI18n from 'vue-i18n';
 import messages from '@/i18n';
+import axios from 'axios';
+import VueAxios from 'vue-axios';
 Vue.config.productionTip = false;
+Vue.use(VueAxios, axios);
 Vue.use(VueI18n);
+Vue.use(Select);
+Vue.use(Option);
 Vue.use(Button);
 Vue.use(Icon);
 Vue.use(Carousel);

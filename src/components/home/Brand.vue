@@ -65,7 +65,7 @@ export default class Brand extends Vue {
   }
 
   &-sub-title {
-    font-size: 30px;
+    font-size: 24px;
     padding: 20px 0;
   }
 }

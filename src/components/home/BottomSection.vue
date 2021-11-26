@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bottom-section">
     <div class="trade-intro">
       <div class="trade-intro__content">
         <p>{{$t('home.tradeBlock.content1')}}</p>
@@ -82,6 +82,12 @@ export default class BottomSection extends Vue {
 }
 </script>
 <style lang="less" scoped>
+.bottom-section {
+  position: flex;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 .trade-intro {
   background-color: #dfdfdf;
   color: #878787;
@@ -99,6 +105,7 @@ export default class BottomSection extends Vue {
     justify-content: space-between;
     max-width: 1200px;
     margin: auto;
+    font-size: 14px;
   }
   &__list {
     padding: 20px 20px 60px;
@@ -126,6 +133,14 @@ export default class BottomSection extends Vue {
   background-color: #333;
   padding: 10px 0;
   color: #fff;
+}
+
+@media (min-width: 768px) {
+  .bottom-menu {
+    &-section {
+      font-size: 18px;
+    }
+  }
 }
 @media (min-width: 1200px) {
   .trade-intro {
