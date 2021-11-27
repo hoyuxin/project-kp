@@ -5,8 +5,8 @@
         <div class="banner-text-block">
           <div class="platform-banner-wrap">
             <div class="banner-title-block">
-              <p class="banner-title">{{ $t('platform.MT4.Title')}}</p>
-              <p class="banner-sub-title">{{ $t('platform.MT4.SubTitle')}}</p>
+              <p class="banner-title">{{ $t('platform.mt4.title')}}</p>
+              <p class="banner-sub-title">{{ $t('platform.mt4.subTitle')}}</p>
             </div>
             <div class="banner-button-block">
               <a class="banner-link"
@@ -48,9 +48,8 @@
     </div>
     <div class="platform-advantage-block">
       <div class="platform-advantage-left">
-        <h4>MT4優勢特點</h4>
-        <p>Meta Tradr 4 是全球最受歡迎的貨幣對與差價合約交易平台， 集合了⾏情圖表、技術分析、交易等功能， 賬戶可進⾏下單、平倉、限價單、止損、止盈、
-          查看報表等操作。提供電腦版、Android系統、iOS系統多場景安裝使用。</p>
+        <h4>{{$t('platform.mt4.feature.title')}}</h4>
+        <p>{{$t('platform.mt4.feature.content')}}</p>
       </div>
       <div class="platform-advantage-right">
         <div class="features-radio-item-block">
@@ -126,29 +125,29 @@ export default class MetaTrade extends Vue {
   }
   public get RadioItemListRow1() {
     return [
-      { radioText: this.$t('platform.MT4.Feature.Item1') },
-      { radioText: this.$t('platform.MT4.Feature.Item2') },
-      { radioText: this.$t('platform.MT4.Feature.Item3') },
+      { radioText: this.$t('platform.mt4.feature.item1') },
+      { radioText: this.$t('platform.mt4.feature.item2') },
+      { radioText: this.$t('platform.mt4.feature.item3') },
     ];
   }
   public get RadioItemListRow2() {
     return [
-      { radioText: this.$t('platform.MT4.Feature.Item4') },
-      { radioText: this.$t('platform.MT4.Feature.Item5') },
-      { radioText: this.$t('platform.MT4.Feature.Item6') },
+      { radioText: this.$t('platform.mt4.feature.item4') },
+      { radioText: this.$t('platform.mt4.feature.item5') },
+      { radioText: this.$t('platform.mt4.feature.item6') },
     ];
   }
   public get list() {
     const { icon1, icon2, icon3, icon4 } = this.images;
     return [
-      { icon: icon1, title: '一鍵交易', content: '一鍵即進入市場並平倉。' },
+      { icon: icon1, title: this.$t('platform.app.icon.title1'), content: this.$t('platform.app.icon.content1') },
       {
         icon: icon2,
-        title: '演算法交易',
-        content: '使用 MQL4 編程語言建立您的交易機器人，並在終端中執行它們。',
+        title: this.$t('platform.app.icon.title2'),
+        content: this.$t('platform.app.icon.content2'),
       },
-      { icon: icon3, title: 'MetaTrader Market', content: '直接在平台上購買專家顧問和指標。' },
-      { icon: icon4, title: '基本分析', content: '終端中的新聞和訊號用於追蹤所有金融市場事件。' },
+      { icon: icon3, title: this.$t('platform.app.icon.title3'), content: this.$t('platform.app.icon.content3') },
+      { icon: icon4, title: this.$t('platform.app.icon.title4'), content: this.$t('platform.app.icon.content4') },
     ];
   }
 }

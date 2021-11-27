@@ -67,10 +67,8 @@ export default class BottomSection extends Vue {
       },
       {
         label: 'home.question',
-        name: 'Contact',
-
+        name: 'Faq',
         subMenu: [
-          { label: 'home.contact', name: 'Contact' },
           { label: 'home.qa', name: 'Faq' },
         ],
       },

@@ -71,7 +71,7 @@ export default class New extends Vue {
         this.isLoading = false;
       })
       .catch((error) => {
-        console.log('Error:', error.message);
+        // console.log('Error:', error.message);
         this.isLoading = false;
       });
   }

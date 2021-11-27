@@ -21,7 +21,13 @@ import messages from '@/i18n';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 Vue.config.productionTip = false;
-Vue.use(VueAxios, axios);
+Vue.use(VueAxios);
+const host = process.env.VUE_APP_API;
+const instance = axios.create({
+  baseURL: host,
+});
+Vue.prototype.$http = instance;
+
 Vue.use(VueI18n);
 Vue.use(Select);
 Vue.use(Option);
@@ -43,6 +49,7 @@ const i18n = new VueI18n({
   locale: lang,
   messages,
 });
+
 new Vue({
   router,
   i18n,

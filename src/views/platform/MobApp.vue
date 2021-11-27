@@ -6,9 +6,9 @@
         <div class="banner-text-block">
           <div class="mob-app-banner-wrap">
             <div class="banner-title-block">
-              <h3 class="banner-title">{{ $t('platform.App.Title')}}</h3>
-              <p class="banner-sub-title">{{ $t('platform.App.SubTitle')}}</p>
-              <p class="banner-content">{{ $t('platform.App.BannerContent')}}</p>
+              <h3 class="banner-title">{{ $t('platform.app.title')}}</h3>
+              <p class="banner-sub-title">{{ $t('platform.app.subTitle')}}</p>
+              <p class="banner-content">{{ $t('platform.app.bannerContent')}}</p>
             </div>
             <div class="banner-button-block">
               <el-button class="ios-button  mob-app-button">
@@ -60,36 +60,36 @@ export default class MobApp extends Vue {
   public get list() {
     return [
       {
-        title: 'platform.App.Introduction.Item1.Title',
+        title: 'platform.app.introduction.item1.title',
         content: [
-          { label: 'platform.App.Introduction.Item1.Item1', index: 0 },
-          { label: 'platform.App.Introduction.Item1.Item2', index: 1 },
-          { label: 'platform.App.Introduction.Item1.Item3', index: 2 },
-          { label: 'platform.App.Introduction.Item1.Item4', index: 3 },
+          { label: 'platform.app.introduction.item1.item1', index: 0 },
+          { label: 'platform.app.introduction.item1.item2', index: 1 },
+          { label: 'platform.app.introduction.item1.item3', index: 2 },
+          { label: 'platform.app.introduction.item1.item4', index: 3 },
         ],
       },
       {
-        title: 'platform.App.Introduction.Item2.Title',
+        title: 'platform.app.introduction.item2.title',
         content: [
-          { label: 'platform.App.Introduction.Item2.Item1', index: 0 },
-          { label: 'platform.App.Introduction.Item2.Item2', index: 1 },
-          { label: 'platform.App.Introduction.Item2.Item3', index: 2 },
-          { label: 'platform.App.Introduction.Item2.Item4', index: 3 },
+          { label: 'platform.app.introduction.item2.item1', index: 0 },
+          { label: 'platform.app.introduction.item2.item2', index: 1 },
+          { label: 'platform.app.introduction.item2.item3', index: 2 },
+          { label: 'platform.app.introduction.item2.item4', index: 3 },
         ],
       },
       {
-        title: 'platform.App.Introduction.Item3.Title',
+        title: 'platform.app.introduction.item3.title',
         content: [
-          { label: 'platform.App.Introduction.Item3.Item1', index: 0 },
-          { label: 'platform.App.Introduction.Item3.Item2', index: 1 },
-          { label: 'platform.App.Introduction.Item3.Item3', index: 2 },
+          { label: 'platform.app.introduction.item3.item1', index: 0 },
+          { label: 'platform.app.introduction.item3.item2', index: 1 },
+          { label: 'platform.app.introduction.item3.item3', index: 2 },
         ],
       },
       {
-        title: 'platform.App.Introduction.Item4.Title',
+        title: 'platform.app.introduction.item4.title',
         content: [
-          { label: 'platform.App.Introduction.Item4.Item1' },
-          { label: 'platform.App.Introduction.Item4.Item2' },
+          { label: 'platform.app.introduction.item4.item1' },
+          { label: 'platform.app.introduction.item4.item2' },
         ],
       },
     ];

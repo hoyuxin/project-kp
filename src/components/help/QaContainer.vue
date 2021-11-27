@@ -3,10 +3,10 @@
                accordion>
     <el-collapse-item v-for="item in qaList"
                       :key="item.name"
-                      :title="item.title"
+                      :title="$t(item.title)"
                       :name="item.name"
                       class="faq-question-item">
-      <div v-html="item.content"
+      <div v-html="$t(item.content)"
            class="faq-question-content" />
     </el-collapse-item>
   </el-collapse>

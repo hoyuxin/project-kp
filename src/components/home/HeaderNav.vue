@@ -18,7 +18,6 @@
       <div class="nav-mob">
         <p class="language"
            @click="toggleLan($i18n.locale)">{{langText}}</p>
-        <!-- <el-button>{{$t('home.login')}}</el-button> -->
       </div>
       <div class="nav-mob-icon"
            @click="handlerMenu">
@@ -115,9 +114,8 @@ export default class HeaderNav extends Vue {
       {
         label: 'home.question',
         index: 4,
-        name: 'Contact',
+        name: 'Faq',
         child: [
-          { label: 'home.contact', index: 0, name: 'Contact' },
           { label: 'home.qa', index: 1, name: 'Faq' },
         ],
       },

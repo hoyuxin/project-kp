@@ -2,43 +2,43 @@
   <div class="currency-wrap">
     <div class="currency-block">
       <nav-list :currentIndex="3" />
-      <p>虛擬貨幣是基於密碼學，通過代碼創建的一種電子加密貨幣。它們在傳統銀行和政府系統範圍之外自主運作。</p>
+      <p>{{$t('product.currency.content')}}</p>
       <div class="currency-table">
         <el-table :data="tableData"
                   stripe
                   height="600px"
                   style="width: 100%">
           <el-table-column prop="No"
-                           label="序號"
+                           :label="$t('product.column.item1')"
                            width="80" />
           <el-table-column prop="Name"
-                           label="交易代號"
+                           :label="$t('product.column.item2')"
                            align="center" />
           <el-table-column prop="Product"
-                           label="名稱"
+                           :label="$t('product.column.item3')"
                            align="center" />
           <el-table-column prop="Point"
-                           label="點差"
+                           :label="$t('product.column.item4')"
                            align="center" />
           <el-table-column prop="Leverage"
-                           label="槓桿"
+                           :label="$t('product.column.item5')"
                            align="center" />
           <el-table-column prop="Pip"
-                           label="點值"
+                           :label="$t('product.column.item6')"
                            align="center" />
           <el-table-column prop="Time"
-                           label="交易時間"
+                           :label="$t('product.column.item7')"
                            align="center"
                            width="200" />
         </el-table>
       </div>
       <div class="currency-warn-block">
-        <span>注意：</span>
+        <span>{{$t('product.notice.title')}}</span>
         <ul class="currency-warn-list">
-          <li class="currency-warn-item">點差和倉息會隨行情變化，本公司不再另行通知；</li>
-          <li class="currency-warn-item">所有產品在周末及假日休市後，所有掛單將被取消；</li>
-          <li class="currency-warn-item">保證金低於50%時執行強制平倉，本公司保留根據市場行情波動調整保證金比例的權利；</li>
-          <li class="currency-warn-item">解鎖需要補足原先單向保證金。</li>
+          <li class="currency-warn-item">{{$t('product.notice.item1')}}</li>
+          <li class="currency-warn-item">{{$t('product.notice.item2')}}</li>
+          <li class="currency-warn-item">{{$t('product.notice.item3')}}</li>
+          <li class="currency-warn-item">{{$t('product.notice.item4')}}</li>
         </ul>
       </div>
     </div>
@@ -60,101 +60,101 @@ export default class Currency extends Vue {
       {
         No: '1',
         Name: 'BTCUSD',
-        Product: '比特幣',
+        Product: this.$t('product.currency.list.item1'),
         Point: 80,
         Leverage: '1:10',
-        Pip: '0.5美金',
-        Time: '周一 至 周六 00:01-23:55',
+        Pip: '0.5 ' + this.$t('product.us'),
+        Time: this.$t('product.currency.time') + ' 00:01-23:55',
       },
       {
         No: '2',
         Name: 'BCHUSD',
-        Product: '比特幣現金',
+        Product: this.$t('product.currency.list.item2'),
         Point: 60,
         Leverage: '1:10',
-        Pip: '1美金',
-        Time: '周一 至 周六 00:01-23:55',
+        Pip: '1 ' + this.$t('product.us'),
+        Time: this.$t('product.currency.time') + ' 00:01-23:55',
       },
       {
         No: '3',
         Name: 'ETHUSD',
-        Product: '以太幣',
+        Product: this.$t('product.currency.list.item3'),
         Point: 35,
         Leverage: '1:10',
-        Pip: '1美金',
-        Time: '周一 至 周六 00:01-23:55',
+        Pip: '1 ' + this.$t('product.us'),
+        Time: this.$t('product.currency.time') + ' 00:01-23:55',
       },
       {
         No: '4',
         Name: 'LTCUSD',
-        Product: '萊特幣',
+        Product: this.$t('product.currency.list.item4'),
         Point: 35,
         Leverage: '1:10',
-        Pip: '10美金',
-        Time: '周一 至 周六 00:01-23:55',
+        Pip: '10 ' + this.$t('product.us'),
+        Time: this.$t('product.currency.time') + ' 00:01-23:55',
       },
       {
         No: '5',
         Name: 'DSHUSD',
-        Product: '達世幣',
+        Product: this.$t('product.currency.list.item5'),
         Point: 50,
         Leverage: '1:10',
-        Pip: '1美金',
-        Time: '周一 至 周六 00:01-23:55',
+        Pip: '1 ' + this.$t('product.us'),
+        Time: this.$t('product.currency.time') + ' 00:01-23:55',
       },
       {
         No: '6',
         Name: 'ADAUSD',
-        Product: '艾達幣',
+        Product: this.$t('product.currency.list.item6'),
         Point: 3.5,
         Leverage: '1:5',
-        Pip: '10美金',
-        Time: '周一 至 周六 00:01-23:55',
+        Pip: '10 ' + this.$t('product.us'),
+        Time: this.$t('product.currency.time') + ' 00:01-23:55',
       },
       {
         No: '7',
         Name: 'DOTUSD',
-        Product: '波卡幣',
+        Product: this.$t('product.currency.list.item7'),
         Point: 22,
         Leverage: '1:5',
-        Pip: '1美金',
-        Time: '周一 至 周六 00:01-23:55',
+        Pip: '1 ' + this.$t('product.us'),
+        Time: this.$t('product.currency.time') + ' 00:01-23:55',
       },
       {
         No: '8',
         Name: 'EOSUSD',
-        Product: '柚子幣',
+        Product: this.$t('product.currency.list.item8'),
         Point: 30,
         Leverage: '1:10',
-        Pip: '1美金',
-        Time: '周一 至 周六 00:01-23:55',
+        Pip: '1 ' + this.$t('product.us'),
+        Time: this.$t('product.currency.time') + ' 00:01-23:55',
       },
       {
         No: '9',
         Name: 'LINKUSD',
-        Product: 'Chainlink幣',
+        Product: this.$t('product.currency.list.item9'),
         Point: 80,
         Leverage: '1:5',
-        Pip: '1美金',
-        Time: '周一 至 周六 00:01-23:55',
+        Pip: '1 ' + this.$t('product.us'),
+        Time: this.$t('product.currency.time') + ' 00:01-23:55',
       },
       {
         No: '10',
         Name: 'TRXUSD',
-        Product: '波場幣',
+        Product: this.$t('product.currency.list.item10'),
         Point: 1.2,
         Leverage: '1:5',
-        Pip: '10美金',
-        Time: '周一 至 周六 00:01-23:55',
+        Pip: '10 ' + this.$t('product.us'),
+        Time: this.$t('product.currency.time') + ' 00:01-23:55',
       },
       {
         No: '11',
         Name: 'XLMUSD',
-        Product: '恆星幣',
+        Product: this.$t('product.currency.list.item11'),
         Point: 2.2,
         Leverage: '1:5',
-        Pip: '10美金',
-        Time: '周一 至 周六 00:01-23:55',
+        Pip: '10 ' + this.$t('product.us'),
+        Time: this.$t('product.currency.time') + ' 00:01-23:55',
       },
     ];
   }

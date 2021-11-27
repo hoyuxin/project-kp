@@ -7,9 +7,9 @@
       </div>
       <div class="brand-content">
         <div class="brand-content-container">
-          <p class="brand-sub-title">可信賴的品牌</p>
-          <p>我們的目標在於利用金融科技的最新研究成果， 為用戶提供卓越的交易條件和最先進的交易工具。我們的核心使命是為全球客戶及機構提供最佳的交易體驗。</p>
-          <p>我們專業的多語言客服團隊24/7全天候為您提供卓越的客服支援</p>
+          <p class="brand-sub-title">{{$t('home.brand.block1.title')}}</p>
+          <p>{{$t('home.brand.block1.item1')}}</p>
+          <p>{{$t('home.brand.block1.item2')}}</p>
         </div>
       </div>
     </div>
@@ -20,9 +20,9 @@
       </div>
       <div class="brand-content">
         <div class="brand-content-container">
-          <p class="brand-sub-title">指數、大宗商品、虛擬貨幣</p>
-          <p>槓桿最高1:200</p>
-          <p>我們不斷開發新產品來滿足交易者需求</p>
+          <p class="brand-sub-title">{{$t('home.brand.block2.title')}}</p>
+          <p>{{$t('home.brand.block2.item1')}}</p>
+          <p>{{$t('home.brand.block2.item2')}}</p>
         </div>
       </div>
     </div>
@@ -36,7 +36,7 @@ import imgCountry1 from '@/assets/home/pic-building-2@2x.png';
 
 @Component
 export default class Brand extends Vue {
-  public images: {} = { imgCountry, imgCountry1 };
+  public images = { imgCountry, imgCountry1 };
 }
 </script>
 <style lang="less" scoped>
@@ -63,7 +63,6 @@ export default class Brand extends Vue {
       line-height: 2;
     }
   }
-
   &-sub-title {
     font-size: 24px;
     padding: 20px 0;

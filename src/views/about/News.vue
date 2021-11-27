@@ -77,7 +77,7 @@ export default class News extends Vue {
         this.isLoading = false;
       })
       .catch((error) => {
-        console.log('Error:', error.message);
+        // console.log('Error:', error.message);
         this.isLoading = false;
       });
   }
@@ -114,6 +114,10 @@ export default class News extends Vue {
   &-search-bar-block {
     padding: 0 20px;
   }
+  &-block {
+    box-sizing: border-box;
+    overflow: hidden;
+  }
   &-item {
     border: 1px solid #2067a6;
     border-radius: 10px;
@@ -136,6 +140,7 @@ export default class News extends Vue {
   }
   &-description {
     font-size: 14px;
+    word-break: break-all;
   }
   &-more {
     text-align: center;

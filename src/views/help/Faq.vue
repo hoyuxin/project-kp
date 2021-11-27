@@ -5,7 +5,7 @@
         <li :class="['faq-list__item',{'active': item.index === defaultIndex}]"
             v-for="item in list"
             :key="item.index"
-            @click="activeItem(item.index)">{{item.label}} <i class="el-icon-caret-right icon-arrow" /></li>
+            @click="activeItem(item.index)">{{$t(item.label)}} <i class="el-icon-caret-right icon-arrow" /></li>
       </ul>
     </div>
     <div class="faq-question-block">
@@ -35,10 +35,10 @@ export default class Faq extends Vue {
   public componentName = 'Trade';
   public get list() {
     return [
-      { label: '常見問題', index: 0 },
-      { label: '交易問題', index: 1 },
-      { label: '存取問題', index: 2 },
-      { label: '帳戶問題', index: 3 },
+      { label: 'help.list.item1', index: 0 },
+      { label: 'help.list.item2', index: 1 },
+      { label: 'help.list.item3', index: 2 },
+      { label: 'help.list.item4', index: 3 },
     ];
   }
   public activeItem(index: number) {
