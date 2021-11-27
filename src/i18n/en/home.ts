@@ -78,4 +78,16 @@ export default {
     content2:
       'Spread：Spread is variable and may be delayed. Spread data is for reference only. KP assumes no responsibility for errors, omissions or delays, or reliance on this information.',
   },
+  news: {
+    empty: 'No latest news',
+    title: 'News',
+    placeholder: 'Message Category',
+    item1: 'Activity',
+    item2: 'System Announcement',
+    item3: 'New Service',
+    item4: 'API Correction',
+    item5: 'Source Exception',
+    item6: 'Data Update',
+    more: 'More>',
+  },
 };

@@ -98,6 +98,7 @@ export default class Trade extends Vue {
   .trade {
     &-block {
       display: flex;
+      align-items: center;
       background-color: #f7f7f9;
     }
 
@@ -120,6 +121,9 @@ export default class Trade extends Vue {
 }
 @media (min-width: 1440px) {
   .trade {
+    &-block {
+      align-items: inherit;
+    }
     &-content {
       padding: 80px 0 0 150px;
     }

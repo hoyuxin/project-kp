@@ -10,7 +10,17 @@
           <li class="nav-menu__item"
               v-for="item in navList"
               :key="item.index"
-              @click="goPage(item.name)">{{$t(item.label)}}</li>
+              @mouseenter="mouseEnter(item.index)"
+              @mouseleave="mouseleave">{{$t(item.label)}}
+            <div v-if="showIndexSubMenu === item.index"
+                 :class="[{'nav-menu__item-sub': showIndexSubMenu === item.index} ]"
+                 @mouseenter="mouseEnter(item.index)">
+              <p v-for="subMenu in item.child"
+                 :key="subMenu.index"
+                 :class="[subMenu.name]"
+                 @click.prevent="goPage(subMenu.name)">{{$t(subMenu.label)}}</p>
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
@@ -29,12 +39,12 @@
              class="nav-mob-wrap__item"
              @click="handlerMobMenu(mobMenu.index)">
           <p class="nav-mob-wrap__item-text">{{$t(mobMenu.label)}}</p>
-          <div v-if="mobMenu.index ===activeIndexMenu ">
+          <div v-if="mobMenu.index === activeIndexMenu ">
             <p v-for="subMenu in mobMenu.child"
                :key="subMenu.index"
                :class="['nav-mob-wrap__item-sub']"
                @click="goPage(subMenu.name)">
-              {{$t(subMenu.label)}}
+              <span :class="[subMenu.name]">{{$t(subMenu.label)}}</span>
             </p>
           </div>
         </div>
@@ -53,6 +63,7 @@ export default class HeaderNav extends Vue {
   public logo: string = logo;
   public isActiveMobMenu: boolean = false;
   public activeIndexMenu: number = -1;
+  public showIndexSubMenu: number = -1;
   public switchLang(newLang: string) {
     this.$i18n.locale = newLang;
     localStorage.setItem('locale', newLang);
@@ -76,6 +87,12 @@ export default class HeaderNav extends Vue {
     } else {
       this.activeIndexMenu = index;
     }
+  }
+  public mouseEnter(index: number) {
+    this.showIndexSubMenu = index;
+  }
+  public mouseleave() {
+    this.showIndexSubMenu = -1;
   }
 
   public get langText() {
@@ -115,9 +132,7 @@ export default class HeaderNav extends Vue {
         label: 'home.question',
         index: 4,
         name: 'Faq',
-        child: [
-          { label: 'home.qa', index: 1, name: 'Faq' },
-        ],
+        child: [{ label: 'home.qa', index: 1, name: 'Faq' }],
       },
     ];
   }
@@ -153,12 +168,35 @@ export default class HeaderNav extends Vue {
     list-style: none;
     &__item {
       padding-left: 20px;
+      position: relative;
+      width: 80px;
       &:hover {
         color: @--color-red;
         cursor: pointer;
       }
       &-sub {
         display: block;
+        width: 150px;
+        background-color: #eee;
+        position: absolute;
+        z-index: 10;
+        top: 20px;
+        padding: 20px;
+        color: black;
+        line-height: 2;
+        .Indices,
+        .Commodity,
+        .Currency,
+        .MetaTrade4,
+        .App,
+        .Company,
+        .News,
+        .Faq {
+          &:hover {
+            background-color: #ccc;
+            color: #777;
+          }
+        }
       }
     }
   }

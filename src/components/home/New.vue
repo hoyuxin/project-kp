@@ -3,14 +3,14 @@
     <loading v-if="isLoading" />
     <div class="title-search">
       <p class="home-new-page-title"
-         @click="handlerNews">最新消息</p>
+         @click="handlerNews">{{$t('home.news.title')}}</p>
       <el-select v-model="searchType"
-                 placeholder="消息類別"
+                 :placeholder="$t('home.news.placeholder')"
                  @change="handlerType">
         <el-option v-for="item in type"
                    :key="item.value"
-                   :label="item.label"
-                   :value="item.value">{{item.label}}</el-option>
+                   :label="$t(item.label)"
+                   :value="item.value">{{$t(item.label)}}</el-option>
       </el-select>
     </div>
     <div v-for="item in oneNew"
@@ -84,16 +84,16 @@ export default class New extends Vue {
   }
   public get type() {
     return [
-      { label: '最新消息', value: 1 },
+      { label: 'home.news.title', value: 1 },
       // { label: '新聞稿', value: 2 },
       // { label: '營運資訊', value: 3 },
       // { label: '轉乘資訊', value: 4 },
-      { label: '活動訊息', value: 5 },
-      { label: '系統公告', value: 6 },
-      { label: '新服務上架', value: 7 },
-      { label: 'API修正', value: 8 },
-      { label: '來源異常', value: 9 },
-      { label: '資料更新', value: 10 },
+      { label: 'home.news.item1', value: 5 },
+      { label: 'home.news.item2', value: 6 },
+      { label: 'home.news.item3', value: 7 },
+      { label: 'home.news.item4', value: 8 },
+      { label: 'home.news.item5', value: 9 },
+      { label: 'home.news.item6', value: 10 },
     ];
   }
 }

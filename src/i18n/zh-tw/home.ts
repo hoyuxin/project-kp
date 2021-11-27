@@ -76,4 +76,16 @@ export default {
     content2:
       '點差：KP 點差是可變的，可能會有所延遲，點差數據僅供參考。 KP對錯誤，遺漏或延遲或依賴此信息的行為不承擔任何責任。',
   },
+  news: {
+    empty: '暫無最新消息',
+    title: '最新消息',
+    placeholder: '消息類別',
+    item1: '活動訊息',
+    item2: '系統公告',
+    item3: '新服務上架',
+    item4: 'API修正',
+    item5: '來源異常',
+    item6: '資料更新',
+    more: '查看更多>',
+  },
 };
