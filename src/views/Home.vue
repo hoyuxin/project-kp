@@ -2,6 +2,7 @@
   <div>
     <banner-section />
     <intro />
+    <new />
     <platform />
     <location />
     <brand />
@@ -13,6 +14,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import BannerSection from '../components/home/BannerSection.vue';
 import Intro from '../components/home/Intro.vue';
+import New from '../components/home/New.vue';
 import Location from '../components/home/Location.vue';
 import Brand from '../components/home/Brand.vue';
 import Platform from '../components/home/Platform.vue';
@@ -22,6 +24,7 @@ import Trade from '../components/home/Trade.vue';
   components: {
     BannerSection,
     Intro,
+    New,
     Location,
     Brand,
     Platform,

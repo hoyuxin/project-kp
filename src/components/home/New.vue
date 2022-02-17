@@ -1,7 +1,9 @@
 <template>
-  <div class="news-block">
+  <div class="home-new-block">
     <loading v-if="isLoading" />
-    <div class="news-search-bar-block">
+    <div class="title-search">
+      <p class="home-new-page-title"
+         @click="handlerNews">{{$t('home.news.title')}}</p>
       <el-select v-model="searchType"
                  :placeholder="$t('home.news.placeholder')"
                  @change="handlerType">
@@ -11,48 +13,40 @@
                    :value="item.value">{{$t(item.label)}}</el-option>
       </el-select>
     </div>
-    <div v-for="item in news"
-         :key="item.UpdateTime"
-         class="news-item">
-      <div class="news-item-title-block">
-        <p class="news-title">{{item.Title}}</p>
-        <p class="news-time">{{item.PublishTime}}</p>
-      </div>
-      <p class="news-description">{{item.Description}}</p>
+    <div v-for="item in oneNew"
+         :key="item.Title"
+         class="home-new-content-block">
+      <p class="home-new-time">{{item.PublishTime}}</p>
+      <p class="home-new-title">{{item.Title}}</p>
+      <p class="home-new-content">{{item.Description}}</p>
     </div>
-    <p v-if="news.length === 0 && !isLoading">{{emptyText}}</p>
-    <p class="news-more"
-       v-if="news.length >= 10"
-       @click="handlerMore">{{$t('home.news.more')}}</p>
-    <!-- {{news}} -->
   </div>
 </template>
 
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator';
-import Loading from '@/components/Loading.vue';
 import dayjs from 'dayjs';
+import Loading from '@/components/Loading.vue';
+
 interface Data {
   Title: string;
   Description: string;
   PublishTime: string;
 }
-
 @Component({
   components: {
     Loading,
   },
 })
-export default class News extends Vue {
+export default class New extends Vue {
   public isLoading: boolean = false;
-  public pageSize: number = 0;
+  public oneNew: Data[] = [];
   public searchType = null;
-  public news: Data[] = [];
   public apiParams: any = {
     url: '/MOTC/v2/PTX/Web/News',
     method: 'get',
     params: {
-      $top: 10,
+      $top: 1,
       $format: 'JSON',
     },
   };
@@ -61,13 +55,13 @@ export default class News extends Vue {
   }
   public callApi() {
     this.isLoading = true;
-    this.news = [];
+    this.oneNew = [];
     this.$http(this.apiParams as any)
       .then((response: any) => {
         const res = response.data.Newses;
         if (res.length > 0) {
           res.forEach((item: Data) => {
-            this.news.push({
+            this.oneNew.push({
               Title: item.Title,
               Description: item.Description,
               PublishTime: dayjs(item.PublishTime).format('YYYY/MM/DD hh:mm:ss'),
@@ -81,17 +75,12 @@ export default class News extends Vue {
         this.isLoading = false;
       });
   }
+  public handlerNews() {
+    this.$router.push({ name: 'News' });
+  }
   public handlerType() {
     this.apiParams.params.$filter = `NewsCategory eq ${this.searchType}`;
     this.callApi();
-  }
-  public handlerMore() {
-    this.pageSize += 10;
-    this.apiParams.params.$skip = this.pageSize;
-    this.callApi();
-  }
-  public get emptyText() {
-    return this.news.length > 0 ? '' : this.$t('home.news.empty');
   }
   public get type() {
     return [
@@ -110,46 +99,44 @@ export default class News extends Vue {
 }
 </script>
 <style lang="less" scoped>
-.news {
-  &-search-bar-block {
-    padding: 0 20px;
+@--color-red: #db351f;
+
+.home-new {
+  &-page-title {
+    font-size: 20px;
+    text-decoration: underline;
+    color: @--color-red;
+    padding: 20px;
+    cursor: pointer;
   }
   &-block {
-    box-sizing: border-box;
-    overflow: hidden;
-  }
-  &-item {
-    border: 1px solid #2067a6;
-    border-radius: 10px;
     margin: 20px;
-    padding: 20px;
+    background-color: #def;
+    padding: 0 0 20px;
+  }
+  &-content-block {
     box-sizing: border-box;
-    &-title-block {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 15px;
-    }
+    padding: 0 20px;
+  }
+  &-title-block {
+    padding-right: 20px;
   }
   &-title {
-    color: brown;
     font-weight: bold;
+    line-height: 1.75;
   }
-  &-time {
-    color: #65a;
-    font-size: 16px;
-  }
-  &-description {
+  &-content {
     font-size: 14px;
     word-break: break-all;
   }
-  &-more {
-    text-align: center;
-    margin: 20px 0;
-    cursor: pointer;
-    color: #2067a6;
-    font-weight: bold;
-  }
+}
+.title-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 20px;
 }
 @media (min-width: 768px) {
+  max-width: 1200px;
 }
 </style>

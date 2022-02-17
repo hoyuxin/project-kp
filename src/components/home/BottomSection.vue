@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bottom-section">
     <div class="trade-intro">
       <div class="trade-intro__content">
         <p>{{$t('home.tradeBlock.content1')}}</p>
@@ -12,8 +12,8 @@
             v-for="item in menuList"
             :key="item.label">
           <li class="bottom-menu__item">
-            <a href=""
-               class="bottom-menu__label">{{$t(item.label)}}</a>
+            <p @click="goPage(item.name)"
+               class="bottom-menu__label">{{$t(item.label)}}</p>
             <ul class="bottom-menu__sub clear-default"
                 v-for="sub in item.subMenu"
                 :key="sub.label">
@@ -42,18 +42,24 @@ export default class BottomSection extends Vue {
     return [
       {
         label: 'home.product',
+        name: 'Indices',
         subMenu: [
           { label: 'home.indices', name: 'Indices' },
-          { label: 'home.currency', name: 'Currency' },
           { label: 'home.commodity', name: 'Commodity' },
+          { label: 'home.currency', name: 'Currency' },
         ],
       },
       {
         label: 'home.trade',
-        subMenu: [{ label: 'Meta Trade4', name: 'MetaTrade4' }],
+        name: 'MetaTrade4',
+        subMenu: [
+          { label: 'Meta Trade4', name: 'MetaTrade4' },
+          { label: 'App', name: 'App' },
+        ],
       },
       {
         label: 'home.about',
+        name: 'Company',
         subMenu: [
           { label: 'home.company', name: 'Company' },
           { label: 'home.new', name: 'News' },
@@ -61,9 +67,9 @@ export default class BottomSection extends Vue {
       },
       {
         label: 'home.question',
+        name: 'Faq',
         subMenu: [
-          { label: 'home.contact', name: '' },
-          { label: 'home.qa', name: '' },
+          { label: 'home.qa', name: 'Faq' },
         ],
       },
     ];
@@ -74,6 +80,12 @@ export default class BottomSection extends Vue {
 }
 </script>
 <style lang="less" scoped>
+.bottom-section {
+  position: flex;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 .trade-intro {
   background-color: #dfdfdf;
   color: #878787;
@@ -91,6 +103,7 @@ export default class BottomSection extends Vue {
     justify-content: space-between;
     max-width: 1200px;
     margin: auto;
+    font-size: 14px;
   }
   &__list {
     padding: 20px 20px 60px;
@@ -98,6 +111,7 @@ export default class BottomSection extends Vue {
   &__label {
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
   }
 }
 .bottom-submenu {
@@ -117,6 +131,14 @@ export default class BottomSection extends Vue {
   background-color: #333;
   padding: 10px 0;
   color: #fff;
+}
+
+@media (min-width: 768px) {
+  .bottom-menu {
+    &-section {
+      font-size: 18px;
+    }
+  }
 }
 @media (min-width: 1200px) {
   .trade-intro {

@@ -5,16 +5,16 @@
            alt="trade">
     </div>
     <div class="trade-content">
-      <p class="trade-sub-title">無需下載和安裝</p>
+      <p class="trade-sub-title">{{$t('home.platform.subTitle')}}</p>
       <p class="trade-title">TRADING TERMINAL</p>
       <div v-for="item in list"
            :key="item.label"
            class="trade-item">
         <div class="trade-point">
           <div class="trade-point__inside" />
-        </div><span c>{{item.label}}</span>
+        </div><span>{{$t(item.label)}}</span>
       </div>
-      <p class="trade-intro">網頁版交易終端集行情、圖表、交易、分析、報表等功能於一體， 無需下載安裝，就可瀏覽或交易貨幣對、差價合約。簡單、快速、易於使用。</p>
+      <p class="trade-intro">{{$t('home.platform.content')}}</p>
     </div>
   </div>
 </template>
@@ -28,10 +28,10 @@ export default class Trade extends Vue {
   public imgTrade = imgTrade;
   public get list() {
     return [
-      { index: 0, label: '同品種一鍵平倉' },
-      { index: 1, label: '同方向一鍵平倉' },
-      { index: 2, label: '所有訂單一鍵平倉' },
-      { index: 3, label: '價格提醒' },
+      { index: 0, label: 'home.platform.item1' },
+      { index: 1, label: 'home.platform.item2' },
+      { index: 2, label: 'home.platform.item3' },
+      { index: 3, label: 'home.platform.item4' },
     ];
   }
 }
@@ -98,6 +98,7 @@ export default class Trade extends Vue {
   .trade {
     &-block {
       display: flex;
+      align-items: center;
       background-color: #f7f7f9;
     }
 
@@ -120,6 +121,9 @@ export default class Trade extends Vue {
 }
 @media (min-width: 1440px) {
   .trade {
+    &-block {
+      align-items: inherit;
+    }
     &-content {
       padding: 80px 0 0 150px;
     }

@@ -1,10 +1,11 @@
 export default {
   product: 'Product',
-  stock: 'Stock',
   commodity: 'Commodity',
   indices: 'Indices',
   currency: 'Cryptocurrency',
   trade: 'Trade',
+  mt4: 'Meta Trade4',
+  app: 'APP',
   about: 'About',
   company: 'Company',
   new: 'Latest News',
@@ -35,12 +36,35 @@ export default {
       label4: 'Global regulation',
     },
   },
+  brand: {
+    block1: {
+      title: 'Trusted brand',
+      item1:
+        'Our goal is to use the latest research results of financial technology to provide users with excellent trading conditions and the most advanced trading tools. Our core mission is to provide the best trading experience for global customers and institutions.',
+      item2:
+        'Our professional multilingual customer service team provides you with excellent customer service support 24/7',
+    },
+    block2: {
+      title: 'Indexes, Commodities, Currencies',
+      item1: 'Maximum leverage 1:200',
+      item2: 'We continue to develop new products to meet the needs of traders',
+    },
+  },
+  platform: {
+    subTitle: 'No need to download and install',
+    item1: 'Close positions of the same type with one click',
+    item2: 'One-click liquidation in the same direction',
+    item3: 'One-click closing of all orders',
+    item4: 'Price reminder',
+    content:
+      'The web version of the trading terminal integrates market quotations, charts, trading, analysis, reports and other functions. You can browse or trade currency pairs and CFDs without downloading and installing. Simple, fast and easy to use',
+  },
   bottomSection: {
     title: 'The most popular trading platform',
     android: 'Android',
     ios: 'iOS',
     companyIntro:
-      'Focus on global investors to provide professional and diversified financial product investment services, with business scope including foreign exchange and crude oil.',
+      'Focus on global investors to provide professional and diversified financial product investment services',
     brand: {
       title: 'Trusted brand',
       label1: 'Regulatory recognition in 3 countries',
@@ -53,5 +77,17 @@ export default {
       'Leveraged trading: The use of small funds to invest several times the original amount. Leveraged trading can greatly increase the rate of return, and can also magnify the loss several times and may lose more than the deposited funds. Therefore, trading at any level of leverage may not be suitable for all investors. Investment is risky, choose carefully',
     content2:
       'Spread：Spread is variable and may be delayed. Spread data is for reference only. KP assumes no responsibility for errors, omissions or delays, or reliance on this information.',
+  },
+  news: {
+    empty: 'No latest news',
+    title: 'News',
+    placeholder: 'Message Category',
+    item1: 'Activity',
+    item2: 'System Announcement',
+    item3: 'New Service',
+    item4: 'API Correction',
+    item5: 'Source Exception',
+    item6: 'Data Update',
+    more: 'More>',
   },
 };
